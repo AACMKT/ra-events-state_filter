@@ -11,15 +11,16 @@ export default class Portfolio extends Component {
 
     render() {
        let { data } = this.props;
-        if (this.state.selected != "All") {
+        if (this.state.selected !== "All") {
             console.log(this.state.selected)
-            data = data.filter(el => el.category == this.state.selected)
+            data = data.filter(el => el.category === this.state.selected)
         }
 
         return (
         <>
     
             < Toolbar   filters = { this.filters }
+                        selected = { this.state.selected }
                         onSelectFilter = {this.onClick}
             />
             <div className="container"></div>

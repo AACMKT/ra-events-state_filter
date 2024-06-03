@@ -1,11 +1,10 @@
 const Toolbar = (props) => {
-    const { filters, onSelectFilter } = props;
-  
+    const { filters, selected, onSelectFilter } = props;
     return (
         <div>
             {
                 filters.map((filter, index) => {return (
-                    <button key={index} onClick = { onSelectFilter } >{ filter }</button>
+                    <button key= { index } className= { selected === filter? "btn-selected":null } onClick = { onSelectFilter } >{ filter }</button>
                 )})
             }
         </div>
